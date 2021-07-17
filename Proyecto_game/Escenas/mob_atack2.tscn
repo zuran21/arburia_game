@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://BGM/SonidosVideojuegoRetro/ExplosionRetro.wav" type="AudioStream" id=1]
+[ext_resource path="res://IMG/jefe/bos1/fejefin3.png" type="Texture" id=2]
+[ext_resource path="res://IMG/jefe/bos1/fejefin1.png" type="Texture" id=3]
+[ext_resource path="res://IMG/jefe/bos1/fejefin2.png" type="Texture" id=4]
+[ext_resource path="res://IMG/jefe/bos1/fejefin.png" type="Texture" id=5]
+[ext_resource path="res://Escenas/mob_atack2.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 64.8513
+
+[node name="mob_atack2" type="Area2D" groups=[
+"mob_atack2",
+]]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9.92126, -5.15906 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_mob_atack2_area_entered"]

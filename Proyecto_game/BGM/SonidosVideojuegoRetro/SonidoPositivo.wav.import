@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SonidoPositivo.wav-c276c87bed41729e66dd462e5f3feaf8.sample"
+
+[deps]
+
+source_file="res://BGM/SonidosVideojuegoRetro/SonidoPositivo.wav"
+dest_files=[ "res://.import/SonidoPositivo.wav-c276c87bed41729e66dd462e5f3feaf8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

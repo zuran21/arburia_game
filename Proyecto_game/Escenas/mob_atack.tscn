@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://IMG/jefe/bos1/jefe2.png" type="Texture" id=1]
+[ext_resource path="res://IMG/jefe/bos1/jefe3.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/mob_atack.gd" type="Script" id=3]
+[ext_resource path="res://BGM/SonidosVideojuegoRetro/SonidoMuerte.wav" type="AudioStream" id=4]
+[ext_resource path="res://IMG/jefe/bos1/jefe6.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 36.574
+
+[node name="mob_atack" type="Area2D" groups=[
+"mob_atack",
+]]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"atack",
+]]
+position = Vector2( -11.7859, -17.3981 )
+scale = Vector2( 0.451399, 0.428255 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -10.1083, -5.94604 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 2 )
+
+[node name="explocion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -18.802
+autoplay = true
+
+[connection signal="area_entered" from="." to="." method="_on_mob_atack_area_entered"]

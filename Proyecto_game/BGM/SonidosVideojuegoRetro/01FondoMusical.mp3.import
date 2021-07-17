@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/01FondoMusical.mp3-475a89d95d0e09d6ba722ebf721023bd.mp3str"
+
+[deps]
+
+source_file="res://BGM/SonidosVideojuegoRetro/01FondoMusical.mp3"
+dest_files=[ "res://.import/01FondoMusical.mp3-475a89d95d0e09d6ba722ebf721023bd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
